@@ -108,6 +108,7 @@ contract Ghost {
         pure 
         assertNoChallenge(state)
         returns (AppState){
+            require(state.turnNum > 6);
             state.fullWordChallengeInProgress = true;
             return state;
         }
